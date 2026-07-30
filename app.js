@@ -26,7 +26,7 @@ const dinosaurs=[
 ];
 
 function dinoArt(d){return `<img class="real-dino" src="${d.image}" alt="${d.name}のリアルなイラスト" draggable="false">`}
-dinosaurs.forEach(d=>{d.image=`assets/dinosaurs/${d.id}-key.png`;d.svg=()=>dinoArt(d)});
+dinosaurs.forEach(d=>{d.image=`assets/dinosaurs/${d.id}.png`;d.svg=()=>dinoArt(d)});
 
 function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
 function speak(text){if(!soundOn||!("speechSynthesis" in window))return;window.speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang="ja-JP";u.rate=.83;u.pitch=1.18;window.speechSynthesis.speak(u)}
